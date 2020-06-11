@@ -1,3 +1,67 @@
+@import "./header.scss";
+@import "./hero.scss";
+@import "./menu.scss";
+@import "./why.scss";
+@import "./latestArticles.scss";
+:root {
+  --dark-blue: hsl(233, 26%, 24%);
+  --lime-green: hsl(136, 65%, 51%);
+  --bright-cyan: hsl(192, 70%, 51%);
+  --grayish-blue: hsl(233, 8%, 62%);
+  --light-grayish-blue: hsl(220, 16%, 96%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  --white: hsl(0, 0%, 100%);
+  font-size: 16px;
+  --wrapper-space: 1.5em;
+}
+.is-hide {
+  display: none !important;
+}
 body {
-  border: solid 1px red;
+  font-family: "Public Sans", sans-serif;
+  margin: 0;
+  color: var(--grayish-blue);
+}
+
+.copy {
+  line-height: 1.7;
+  font-size: 0.9em;
+}
+.wrapper {
+  padding: 0 var(--wrapper-space);
+}
+
+.tittle {
+  &__h1 {
+    //sass => union class tittle whit &__h1 for apply styles on class .tittle__h1
+
+    font-size: 2em;
+    color: var(--dark-blue);
+    font-weight: 300;
+    line-height: 1.2;
+    margin: 0;
+    margin-bottom: 0.7em;
+  }
+  &__h2 {
+    //sass => union class tittle whit &__h2 for apply styles on class .tittle__h1
+    @extend .tittle__h1;
+    font-size: 1.5em;
+    margin-bottom: 0.7em;
+  }
+  &__h3 {
+    border: 2px solid green;
+    @extend .tittle__h1;
+    font-size: 1em;
+  }
+}
+.button {
+  padding: 0.9em 2.2em;
+  font-size: 1em;
+  background-image: linear-gradient(
+    to right,
+    var(--lime-green) 0%,
+    var(--bright-cyan) 100%
+  );
+  color: var(--white);
+  border-radius: 1.5em;
 }
